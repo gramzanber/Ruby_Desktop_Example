@@ -10,6 +10,6 @@ def startup_checks
 		# i.e Loading in configuration information from the config folder
 	rescue StandardError => error
 		error_message = "Error in lib/startup.rb method startup_checks - #{error}"
-		log(error_message, "error", "WARN")
+		log(error_message, "error", "FATAL")
 	end
 end

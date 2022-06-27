@@ -5,7 +5,7 @@ def log(message, log_name, error_level = "INFO")
 		log_location = "#{log_folder}#{log_name}"
 		time = Time.new.strftime("%Y-%m-%d %H:%M:%S")
 		file = File.open("#{log_location}", "a")
-		file.puts("#{error_level},#{time},#{message}")
+		file.puts("#{error_level.upcase},#{time},#{message}")
 		file.close if file != nil
 		# size is in bytes, 1024 * 1024 is a megabyte
 		roll_log(log_name) if File.size("#{log_location}") > (1024 * 1024)

@@ -1,25 +1,23 @@
-def load_configuration_data
+def load_configuration_data config_name
 	begin
-		if File.exist?("#{$application_root}/config/location.data")
-			$entry_link.delete("0", "end")
-			$entry_link.insert('end', decrpyt_file("location.data"))
-		end
-	rescue StandardError => e
-		$label_error.text = "There was an unspecified error"
-		output_to_log("Error in lib/.support_methods.rb method load_data")
-		output_to_log(e)
+		config_file = "#{$application_root}/config/#{config_name}.data"
+		data = File.exist?(config_file) ? decrpyt_file(config_file) : "Config file not found."
+		return data
+	rescue StandardError => error
+		error_message = "Error in lib/configuration_management.rb method load_configuration_data - #{error}"
+		log(error_message, "error", "FATAL")
 	end
 end
 
-def save_configuration_data
+# This method replaces the config file
+def save_configuration_data config_name, data
 	begin
-		if File.exist?("#{$application_root}/config/location.data")
-			$entry_link.delete("0", "end")
-			$entry_link.insert('end', decrpyt_file("location.data"))
-		end
-	rescue StandardError => e
-		$label_error.text = "There was an unspecified error"
-		output_to_log("Error in lib/.support_methods.rb method load_data")
-		output_to_log(e)
+		config_file = "#{$application_root}/config/#{config_name}.data"
+		File.delete(config_file) if File.exist?(config_file)
+		encrpyt_file(config_file, data)
+		return true
+	rescue StandardError => error
+		error_message = "Error in lib/configuration_management.rb method save_configuration_data - #{error}"
+		log(error_message, "error", "FATAL")
 	end
 end
