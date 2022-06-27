@@ -19,13 +19,15 @@ def roll_log(log_name)
 	begin
 		log_folder = "#{$application_root}/log/"
 		log_location = "#{log_folder}#{log_name}"
+		log_name = log_name.split(".log")[0] # This gives us the log base name
 		number_of_logs = 0
 		Dir.children("#{log_folder}").each do |filename|
-			number_of_logs = number_of_logs + 1 if filename.includes?(log_name)
+			number_of_logs = number_of_logs + 1 if filename.include?(log_name)
 		end
-		old_log_name = number_of_logs < 10 ? "#{long_name}_0#{number_of_logs.to_s}.log" :
-			"#{long_name}_#{number_of_logs.to_s}.log"
-		File.rename("#{log_name}", "#{path}#{old_log_name}")
+		
+		old_log_name = number_of_logs < 10 ? "#{log_name}_0#{number_of_logs.to_s}.log" :
+			"#{log_name}_#{number_of_logs.to_s}.log"
+		File.rename("#{log_location}", "#{log_folder}#{old_log_name}")
 	rescue StandardError => error
 		error_message = "Error in lib/logging.rb method roll_log - #{error}"
 		log(error_message, "error", "WARN")
