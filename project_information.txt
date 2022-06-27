@@ -1,0 +1,14 @@
+# Date Authored:    {YYYY-MM-DD}
+# Project Name:     {project_name}
+
+# Project
+# {project description}
+
+# Credits
+# {title}   {lastname, firstname}
+
+# Software license
+# {software_license}
+
+# Designed by
+# {team_name}
