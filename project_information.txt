@@ -1,14 +1,13 @@
-# Date Authored:    {YYYY-MM-DD}
+# Date Authored:    {project_creation_date}  # Use YYYY-MM-DD
 # Project Name:     {project_name}
+# Release:          {softeware_version} ({release_date}) # Use YYYY-MM-DD
 
 # Project
 # {project description}
 
-# Credits
-# {title}   {lastname, firstname}
-
-# Software license
-# {software_license}
-
 # Designed by
 # {team_name}
+# {team_web_link}
+
+# Credits
+# {title}   {lastname, firstname}

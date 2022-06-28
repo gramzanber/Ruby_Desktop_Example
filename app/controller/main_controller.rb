@@ -17,7 +17,7 @@ class MainController
 	end
 
 	def program_license_method
-		Tk::messageBox :type => 'ok', :message => $license, :icon => 'info', :title => 'Program License'
+		Tk::messageBox :type => 'ok', :message => $program_license, :icon => 'info', :title => 'Program License'
 	end
 	  
 	def browse_method

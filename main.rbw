@@ -1,8 +1,13 @@
 # Set application wide variables
 $company = "company name"
 $company_link = "website link"
+$software_version = "0.0.0"
+$release_date = "YYYY-MM-DD"
+$application_name = "application name"
+$application_root = Dir.pwd # This assumes you are running this application from the start.sh/cmd
+$application_icon = "#{$application_root}/assets/image/desktop_logo_50.png"
 $program_information = "Ruby desktop application using TK"
-$license = "
+$program_license = "
 	BSD 4-Clause License
 
 	Copyright (c) 2021, Nate Tachibana
@@ -37,11 +42,6 @@ $license = "
 	OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 	OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 "
-$software_version = "0.0.1"
-$application_name = "application name"
-$detected_operating_system = ""
-$application_root = Dir.pwd # This assumes you are running this application from the start.sh/cmd
-$application_icon = "#{$application_root}/assets/image/desktop_logo_50.png"
 
 # Required ruby code
 require "#{$application_root}/lib/library_index.rb"
