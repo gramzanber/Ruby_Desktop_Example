@@ -63,7 +63,9 @@ class MainView
 		end
   
 		def build_file_menu
-			@file_menu = TkMenu.new(@root)
+			@file_menu = TkMenu.new(@root, 'tearoff' => 0)
+			# If the tearoff hash is not added then users can rip the menu off into a new window.
+			# Notice the dotted line in the help menu when running, and click on it.
 	
 			@file_menu.add('command',
 						'label'     => "Browse",
