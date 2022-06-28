@@ -6,7 +6,10 @@ $release_date = "YYYY-MM-DD"
 $application_name = "application name"
 $application_root = Dir.pwd # This assumes you are running this application from the start.sh/cmd
 $application_icon = "#{$application_root}/assets/image/desktop_logo_50.png"
-$program_information = "Ruby desktop application using TK"
+$program_information = "Ruby desktop application using TK" + "\n\n" +
+	"Designed by #{$company}\n#{$company_link}" + "\n\n" +
+	"Credits\n" + "" + "Developer\tTachibana, Nathanial\n" + "\n\n" +
+	"Software Version: #{$software_version} (#{$release_date})"
 $program_license = "
 	BSD 4-Clause License
 
